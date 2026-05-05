@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARBITORIA — Wonmin Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="site-header__brand">Wonmin Kim</a>
+    <nav class="site-header__nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="project-page">
+
+      <a href="../index.html#work" class="project-page__back">← Back to work</a>
+
+      <div class="project-page__meta">
+        <span>Project № 01</span>
+        <span>Personal · Live</span>
+        <span>2025 — present</span>
+      </div>
+
+      <h1>ARBITORIA</h1>
+
+      <p class="project-page__lede">
+        A personal-finance transparency platform across six countries.
+        Salary, housing, utilities, insurance, loans, investing — built
+        on official data, deliberately review-free, available in
+        seventeen language combinations. <em>Maître de vos propres
+        choix — l'art de la vie choisie.</em>
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Most financial decisions ordinary people make happen under
+        information asymmetry that doesn't need to exist. The data
+        already exists — government statistics on salaries, public
+        regulator filings on insurance prices, official utility
+        tariffs, central bank rate disclosures. What's missing is the
+        translation layer that turns it into something a person can
+        actually compare against their own situation.
+      </p>
+      <p>
+        Existing tools fail in two predictable ways. First, they
+        operate inside a single country, which is useless for the
+        growing population of people who live across borders.
+        Second, they're contaminated with reviews — opinions priced
+        as data, anecdotes weighted as evidence. Reviews look helpful
+        but introduce noise, and noise is the opposite of what
+        someone making a real financial decision needs.
+      </p>
+
+      <h2>Approach</h2>
+      <p>
+        ARBITORIA is built on three commitments:
+      </p>
+      <ul>
+        <li>
+          <strong>Official data only.</strong> Every figure on the
+          platform traces back to a public, authoritative source —
+          national statistics offices, central banks, regulator
+          filings, government tax tables.
+        </li>
+        <li>
+          <strong>No reviews, ever.</strong> Reviews introduce noise
+          that compromises transparency. The platform shows what
+          exists, not what someone felt about it. People can form
+          their own judgement once they can see the actual data.
+        </li>
+        <li>
+          <strong>Cross-country by design.</strong> Six countries
+          (Korea, Japan, U.S., France, Spain, Belgium) with
+          seventeen language combinations. The same person can
+          compare their situation in their language across the
+          markets they're connected to.
+        </li>
+      </ul>
+
+      <h2>What's on the platform</h2>
+      <p>
+        The product is organised around six categories — the
+        decisions that consume most of a household's financial
+        attention:
+      </p>
+      <ul>
+        <li><strong>Salary</strong> — gross-to-net calculators by country, top jobs by market, cross-country comparisons</li>
+        <li><strong>Housing</strong> — rent vs. purchase trade-offs, mortgage calculators with timeline-based interest projections</li>
+        <li><strong>Utilities</strong> — electricity, water, internet, mobile — provider-by-provider comparisons</li>
+        <li><strong>Insurance</strong> — coverage and price comparisons</li>
+        <li><strong>Loans</strong> — interest calculators showing real cost over time</li>
+        <li><strong>Investing</strong> — official-data-driven recommendations on funds and savings vehicles</li>
+      </ul>
+
+      <h2>Tech stack</h2>
+      <div class="project-page__stack">
+        Frontend: React (Vite) · multi-locale<br />
+        Backend: FastAPI (Python)<br />
+        Database: PostgreSQL<br />
+        Data sources: National statistics offices, regulator filings, central banks<br />
+        Deploy: Vercel
+      </div>
+
+      <h2>What I learned</h2>
+      <p>
+        The hardest part of cross-country financial transparency
+        isn't the data ingestion — it's the comparability. Two
+        countries' "average salary" figures rarely use the same
+        definition. Tax structures differ in ways that aren't
+        captured by gross-to-net alone. Even something as basic as
+        "rent per month" is reported differently across markets.
+      </p>
+      <p>
+        Building ARBITORIA was the hands-on version of the lesson my
+        data-steward years gave me: data quality isn't a one-time fix.
+        It's the ongoing translation between what sources publish and
+        what users actually need to compare. The work that AI can't
+        finish is the same work, in a different domain.
+      </p>
+
+      <p class="project-page__quote">
+        "Reviews look helpful but introduce noise. People making real
+        financial decisions don't need more opinions — they need to
+        see what exists."
+      </p>
+
+      <h2>Status</h2>
+      <p>
+        Live at
+        <a href="https://arbitoria.com" target="_blank" rel="noopener">arbitoria.com</a>.
+        Six countries supported, seventeen language combinations.
+        Active development — new categories added as the underlying
+        data sources are validated and integrated.
+      </p>
+
+      <h2>Why it matters to me</h2>
+      <p>
+        ARBITORIA is the smallest version of what I want to do
+        professionally. Most of working with data is descriptive —
+        explaining what already happened, predicting what's likely
+        to happen next. Building ARBITORIA is the opposite: making
+        a thing that didn't exist, that materially changes what
+        someone can decide. That's the side of the verb I want my
+        next role to be on.
+      </p>
+
+    </article>
+  </main>
+
+</body>
+</html>
