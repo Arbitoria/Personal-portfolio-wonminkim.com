@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salaire-Plus — Case Study · Wonmin Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="alternate" hreflang="en" href="salaire-plus.html" />
+  <link rel="alternate" hreflang="fr" href="../fr/projects/salaire-plus.html" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="site-header__brand">Wonmin Kim</a>
+    <nav class="site-header__nav">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+      <span class="lang-toggle">
+        <a href="salaire-plus.html" class="lang-toggle__link is-active" aria-current="page">EN</a>
+        <span class="lang-toggle__sep" aria-hidden="true">·</span>
+        <a href="../fr/projects/salaire-plus.html" class="lang-toggle__link" hreflang="fr">FR</a>
+      </span>
+    </nav>
+  </header>
+
+  <article class="project-page">
+
+    <a href="../index.html#work" class="project-page__back">← Back to work</a>
+
+    <div class="project-page__meta">
+      <span>Case study</span>
+      <span>Live · 2024 — present</span>
+      <span>6 countries · 6 languages</span>
+    </div>
+
+    <h1>Salaire-Plus</h1>
+
+    <p class="project-page__lede">
+      A focused salary transparency tool spanning six countries —
+      Korea, Japan, U.S., France, Spain, and Belgium. Gross-to-net
+      calculation, country-specific job markets, cross-country
+      comparison. Peak days reach <strong>3,000 visitors</strong>,
+      verified through Cloudflare analytics. Built for people whose
+      careers cross borders.
+    </p>
+
+    <h2>The problem</h2>
+    <p>
+      Salary conversations across borders are broken. A €60,000 offer
+      in Brussels is not the same as €60,000 in Paris, ¥9 million in
+      Tokyo, or ₩90 million in Seoul — but most candidates don't have
+      a clean way to compare. Tax structures, social charges,
+      mandatory contributions, and the local cost of essentials all
+      vary, and the existing comparison tools are either superficial
+      (currency conversion only) or buried inside larger paid
+      services.
+    </p>
+
+    <p>
+      Salaire-Plus answers the question a candidate actually asks:
+      <em>"What do I take home, in the country I'm thinking about, in
+      the language I think in?"</em>
+    </p>
+
+    <h2>What it does</h2>
+    <ul>
+      <li><strong>Gross-to-net</strong> for six countries with country-specific tax brackets, social contributions, and any mandatory deductions.</li>
+      <li><strong>Country-specific job-market context</strong> — typical salary ranges by sector and seniority, drawn from official statistical agencies and validated employer surveys.</li>
+      <li><strong>Cross-country comparison</strong> — same role, same level, normalized for purchasing power.</li>
+      <li><strong>Six interface languages</strong> — Korean, Japanese, English, French, Spanish, and Dutch. Every calculation, every label, every error message localized.</li>
+    </ul>
+
+    <div class="project-page__stack">
+      Stack — React (frontend) · FastAPI (Python backend) · PostgreSQL · Multi-locale (i18n) · Vercel + Heroku
+    </div>
+
+    <h2>Why six languages, not just English</h2>
+    <p>
+      The whole point of the tool is that you should be able to
+      reason about salary in the language you actually think in. A
+      Korean engineer thinking about a Paris offer is doing math in
+      Korean about French tax brackets — that's the cognitive load
+      the product reduces. English-only would have been faster to
+      ship and would have served far fewer of the people who need
+      this most.
+    </p>
+
+    <h2>The cross-border architecture</h2>
+    <p>
+      Country is treated as a first-class axis throughout: schema,
+      tax calculation engine, locale resolution, copy, currency
+      formatting, and number formatting (commas vs. periods,
+      thousand-separator placement). Adding a new country is a
+      well-defined operation rather than a code-everywhere refactor.
+    </p>
+
+    <p class="project-page__quote">
+      The product is the math, the languages, and the refusal to
+      simplify the truth — not a marketing surface around a salary lookup.
+    </p>
+
+    <h2>What I learned building it</h2>
+    <ul>
+      <li><strong>Tax calculation is brutal across borders.</strong> Each country has its own logic for ceilings, brackets, deductions, and exceptions. The work isn't programming, it's research and validation against actual official examples.</li>
+      <li><strong>Localization is a product decision, not a wrapper.</strong> Number formats, date formats, salary display conventions (gross vs. net default), and even color expectations differ by market.</li>
+      <li><strong>SEO compounds in the long tail.</strong> Searches like "한국 연봉 실수령액 계산기 프랑스 비교" are low-volume but high-intent. Showing up for hundreds of these is what gets to 3,000 visits a day.</li>
+      <li><strong>Trust signals matter more than design polish.</strong> Visible source citations and "last updated" dates do more for credibility than any visual.</li>
+    </ul>
+
+    <h2>Numbers</h2>
+    <ul>
+      <li><strong>3,000 peak daily visitors</strong> — Cloudflare-verified, no paid acquisition.</li>
+      <li><strong>6 countries</strong> — Korea, Japan, U.S., France, Spain, Belgium.</li>
+      <li><strong>6 languages</strong> — Korean, Japanese, English, French, Spanish, Dutch.</li>
+      <li><strong>0 affiliate links</strong> — by design.</li>
+    </ul>
+
+    <h2>Why this matters for the next role</h2>
+    <p>
+      Salaire-Plus demonstrates the specific shape of work I'm best
+      positioned for: cross-border consumer products where the
+      regulatory math has to be exact, the localization has to be
+      real, and the architecture has to make adding the next country
+      cheap. It's the same shape as the work a Korean fintech needs
+      when expanding to Europe, or a European fintech needs when
+      eyeing Asia.
+    </p>
+
+    <p>
+      Live at <a href="https://salaire-plus.com" target="_blank" rel="noopener">salaire-plus.com</a>.
+    </p>
+
+  </article>
+
+</body>
+</html>

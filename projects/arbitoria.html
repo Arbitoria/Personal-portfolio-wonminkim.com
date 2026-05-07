@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARBITORIA — Wonmin Kim</title>
+  <title>ARBITORIA — Case Study · Wonmin Kim</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="alternate" hreflang="en" href="arbitoria.html" />
+  <link rel="alternate" hreflang="fr" href="../fr/projects/arbitoria.html" />
 </head>
 <body>
 
@@ -16,146 +18,131 @@
     <nav class="site-header__nav">
       <a href="../index.html#about">About</a>
       <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
       <a href="../index.html#contact">Contact</a>
+      <span class="lang-toggle">
+        <a href="arbitoria.html" class="lang-toggle__link is-active" aria-current="page">EN</a>
+        <span class="lang-toggle__sep" aria-hidden="true">·</span>
+        <a href="../fr/projects/arbitoria.html" class="lang-toggle__link" hreflang="fr">FR</a>
+      </span>
     </nav>
   </header>
 
-  <main>
-    <article class="project-page">
+  <article class="project-page">
 
-      <a href="../index.html#work" class="project-page__back">← Back to work</a>
+    <a href="../index.html#work" class="project-page__back">← Back to work</a>
 
-      <div class="project-page__meta">
-        <span>Project № 01</span>
-        <span>Personal · Live</span>
-        <span>2025 — present</span>
-      </div>
+    <div class="project-page__meta">
+      <span>Case study</span>
+      <span>Live · 2024 — present</span>
+      <span>Belgium · France</span>
+    </div>
 
-      <h1>ARBITORIA</h1>
+    <h1>ARBITORIA</h1>
 
-      <p class="project-page__lede">
-        A personal-finance transparency platform across six countries.
-        Salary, housing, utilities, insurance, loans, investing — built
-        on official data, deliberately review-free, available in
-        seventeen language combinations. <em>Maître de vos propres
-        choix — l'art de la vie choisie.</em>
-      </p>
+    <p class="project-page__lede">
+      A personal-finance transparency platform for Belgium and France.
+      Salary, housing, utilities, insurance, loans, investing — all
+      built on official, citable data. Deliberately review-free.
+      Currently serving about <strong>300 daily visitors</strong>,
+      verified through Cloudflare analytics, with no paid acquisition.
+    </p>
 
-      <h2>Problem</h2>
-      <p>
-        Most financial decisions ordinary people make happen under
-        information asymmetry that doesn't need to exist. The data
-        already exists — government statistics on salaries, public
-        regulator filings on insurance prices, official utility
-        tariffs, central bank rate disclosures. What's missing is the
-        translation layer that turns it into something a person can
-        actually compare against their own situation.
-      </p>
-      <p>
-        Existing tools fail in two predictable ways. First, they
-        operate inside a single country, which is useless for the
-        growing population of people who live across borders.
-        Second, they're contaminated with reviews — opinions priced
-        as data, anecdotes weighted as evidence. Reviews look helpful
-        but introduce noise, and noise is the opposite of what
-        someone making a real financial decision needs.
-      </p>
+    <h2>The problem</h2>
+    <p>
+      Most financial decisions ordinary households make in Belgium and
+      France happen under information asymmetry that doesn't need to
+      exist. Salary norms are buried in collective agreements. Energy
+      tariffs change every quarter and comparison tools are sponsored.
+      Insurance products are deliberately complex. Mortgage and loan
+      terms vary by canton, region, and bank in ways no individual
+      tracks. The data exists — but it sits in scattered government
+      portals, regulator filings, and PDFs nobody reads.
+    </p>
 
-      <h2>Approach</h2>
-      <p>
-        ARBITORIA is built on three commitments:
-      </p>
-      <ul>
-        <li>
-          <strong>Official data only.</strong> Every figure on the
-          platform traces back to a public, authoritative source —
-          national statistics offices, central banks, regulator
-          filings, government tax tables.
-        </li>
-        <li>
-          <strong>No reviews, ever.</strong> Reviews introduce noise
-          that compromises transparency. The platform shows what
-          exists, not what someone felt about it. People can form
-          their own judgement once they can see the actual data.
-        </li>
-        <li>
-          <strong>Cross-country by design.</strong> Six countries
-          (Korea, Japan, U.S., France, Spain, Belgium) with
-          seventeen language combinations. The same person can
-          compare their situation in their language across the
-          markets they're connected to.
-        </li>
-      </ul>
+    <p>
+      The premise of ARBITORIA is simple: a household should be able
+      to see their own country's real numbers, on their own terms,
+      without sponsored content interfering.
+    </p>
 
-      <h2>What's on the platform</h2>
-      <p>
-        The product is organised around six categories — the
-        decisions that consume most of a household's financial
-        attention:
-      </p>
-      <ul>
-        <li><strong>Salary</strong> — gross-to-net calculators by country, top jobs by market, cross-country comparisons</li>
-        <li><strong>Housing</strong> — rent vs. purchase trade-offs, mortgage calculators with timeline-based interest projections</li>
-        <li><strong>Utilities</strong> — electricity, water, internet, mobile — provider-by-provider comparisons</li>
-        <li><strong>Insurance</strong> — coverage and price comparisons</li>
-        <li><strong>Loans</strong> — interest calculators showing real cost over time</li>
-        <li><strong>Investing</strong> — official-data-driven recommendations on funds and savings vehicles</li>
-      </ul>
+    <h2>What it does</h2>
+    <ul>
+      <li><strong>Salary</strong> — gross-to-net by region, sector, and contract type, with real percentile data.</li>
+      <li><strong>Housing</strong> — rent and purchase price ranges by commune, transaction tax simulation, mortgage scenario builder.</li>
+      <li><strong>Utilities</strong> — electricity, gas, internet, mobile — current tariffs from regulator filings, not affiliate-paid comparison sites.</li>
+      <li><strong>Insurance</strong> — typology of common products, regulatory baseline coverage, and the questions to ask before signing.</li>
+      <li><strong>Loans &amp; investing</strong> — TAEG ranges by product, tax-advantaged instruments, country-specific structures.</li>
+    </ul>
 
-      <h2>Tech stack</h2>
-      <div class="project-page__stack">
-        Frontend: React (Vite) · multi-locale<br />
-        Backend: FastAPI (Python)<br />
-        Database: PostgreSQL<br />
-        Data sources: National statistics offices, regulator filings, central banks<br />
-        Deploy: Vercel
-      </div>
+    <div class="project-page__stack">
+      Stack — React (frontend) · FastAPI (Python backend) · PostgreSQL · Vercel + Heroku · i18n (FR/NL/EN)
+    </div>
 
-      <h2>What I learned</h2>
-      <p>
-        The hardest part of cross-country financial transparency
-        isn't the data ingestion — it's the comparability. Two
-        countries' "average salary" figures rarely use the same
-        definition. Tax structures differ in ways that aren't
-        captured by gross-to-net alone. Even something as basic as
-        "rent per month" is reported differently across markets.
-      </p>
-      <p>
-        Building ARBITORIA was the hands-on version of the lesson my
-        data-steward years gave me: data quality isn't a one-time fix.
-        It's the ongoing translation between what sources publish and
-        what users actually need to compare. The work that AI can't
-        finish is the same work, in a different domain.
-      </p>
+    <h2>What it deliberately doesn't do</h2>
+    <p>
+      No reviews. No affiliate links. No sponsored placements. No
+      "best of" rankings. The position is that any platform mixing
+      transparency with paid placement compromises the transparency.
+      A 4.7-star rating means nothing if the rating is a side-effect
+      of who paid more.
+    </p>
 
-      <p class="project-page__quote">
-        "Reviews look helpful but introduce noise. People making real
-        financial decisions don't need more opinions — they need to
-        see what exists."
-      </p>
+    <p class="project-page__quote">
+      The platform doesn't tell users what to do.
+      It shows them what's actually true, and lets them decide.
+    </p>
 
-      <h2>Status</h2>
-      <p>
-        Live at
-        <a href="https://arbitoria.com" target="_blank" rel="noopener">arbitoria.com</a>.
-        Six countries supported, seventeen language combinations.
-        Active development — new categories added as the underlying
-        data sources are validated and integrated.
-      </p>
+    <h2>Why it works in two countries</h2>
+    <p>
+      Belgium and France share regulatory roots but differ on tax
+      brackets, social charges, regional housing rules, and product
+      naming conventions. Every category has to be implemented
+      country-aware: a salary calculation in Wallonia is not the same
+      as in Île-de-France, and a mortgage simulation in Flanders has
+      different transaction taxes than in Brussels-Capital.
+    </p>
 
-      <h2>Why it matters to me</h2>
-      <p>
-        ARBITORIA is the smallest version of what I want to do
-        professionally. Most of working with data is descriptive —
-        explaining what already happened, predicting what's likely
-        to happen next. Building ARBITORIA is the opposite: making
-        a thing that didn't exist, that materially changes what
-        someone can decide. That's the side of the verb I want my
-        next role to be on.
-      </p>
+    <p>
+      The architecture treats country as a first-class parameter
+      everywhere — schema, computation, copy, and presentation. This
+      is the same pattern that makes the platform extensible to new
+      countries, which is what Salaire-Plus did first for the salary
+      vertical.
+    </p>
 
-    </article>
-  </main>
+    <h2>What I learned building it</h2>
+    <ul>
+      <li><strong>Official data is harder to ingest than scraped data.</strong> Government portals change formats. PDFs from regulators get reissued mid-year. The boring work of source monitoring is the work.</li>
+      <li><strong>Trust is built by what you refuse to do.</strong> Every "no — we won't take that affiliate revenue" is more credibility than another feature.</li>
+      <li><strong>Multi-country is not multiplicative complexity, it's structural.</strong> Either the architecture treats country as a primary axis, or every feature gets re-implemented per country.</li>
+      <li><strong>SEO from utility, not from content.</strong> Almost all traffic comes from people searching specific calculations ("salaire net Belgique 2026", "TVA réduite logement"). The content earns its rank by actually answering the question.</li>
+    </ul>
+
+    <h2>Numbers</h2>
+    <ul>
+      <li><strong>~300 daily visitors</strong> — Cloudflare-verified, no paid acquisition.</li>
+      <li><strong>2 countries</strong> — Belgium, France, both fully covered.</li>
+      <li><strong>3 languages</strong> — French, Dutch, English.</li>
+      <li><strong>0 affiliate links</strong> — by design, permanently.</li>
+    </ul>
+
+    <h2>Why this matters for the next role</h2>
+    <p>
+      ARBITORIA is the smallest version of the work I want to do
+      next: cross-border consumer products where regulatory nuance
+      and language depth both matter. The skills it required —
+      country-aware schema design, multi-locale frontend, regulatory
+      research, and deliberate product restraint — are the same
+      skills any team building cross-border fintech or insurance
+      tools needs.
+    </p>
+
+    <p>
+      Live at <a href="https://arbitoria.com" target="_blank" rel="noopener">arbitoria.com</a>.
+    </p>
+
+  </article>
 
 </body>
 </html>

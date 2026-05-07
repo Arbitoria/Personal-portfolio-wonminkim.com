@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARBITORIA — Étude de cas · Wonmin Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="alternate" hreflang="en" href="../../projects/arbitoria.html" />
+  <link rel="alternate" hreflang="fr" href="arbitoria.html" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="site-header__brand">Wonmin Kim</a>
+    <nav class="site-header__nav">
+      <a href="../index.html#about">Parcours</a>
+      <a href="../index.html#work">Travaux</a>
+      <a href="../index.html#skills">Outils</a>
+      <a href="../index.html#contact">Contact</a>
+      <span class="lang-toggle">
+        <a href="../../projects/arbitoria.html" class="lang-toggle__link" hreflang="en">EN</a>
+        <span class="lang-toggle__sep" aria-hidden="true">·</span>
+        <a href="arbitoria.html" class="lang-toggle__link is-active" aria-current="page">FR</a>
+      </span>
+    </nav>
+  </header>
+
+  <article class="project-page">
+
+    <a href="../index.html#work" class="project-page__back">← Retour aux travaux</a>
+
+    <div class="project-page__meta">
+      <span>Étude de cas</span>
+      <span>En ligne · 2024 — actuellement</span>
+      <span>Belgique · France</span>
+    </div>
+
+    <h1>ARBITORIA</h1>
+
+    <p class="project-page__lede">
+      Une plateforme de transparence financière personnelle pour la
+      Belgique et la France. Salaire, logement, charges, assurance,
+      prêts, investissement — entièrement construit sur des données
+      officielles citables. Délibérément sans avis. Sert actuellement
+      environ <strong>300 visiteurs par jour</strong>, vérifié via les
+      analytics Cloudflare, sans acquisition payante.
+    </p>
+
+    <h2>Le problème</h2>
+    <p>
+      La plupart des décisions financières que prennent les ménages
+      ordinaires en Belgique et en France se prennent dans une
+      asymétrie d'information qui n'a pas besoin d'exister. Les
+      normes salariales sont enfouies dans les conventions
+      collectives. Les tarifs d'énergie changent chaque trimestre et
+      les comparateurs sont sponsorisés. Les produits d'assurance
+      sont délibérément complexes. Les conditions de prêt et de
+      crédit varient par canton, par région, par banque, d'une façon
+      qu'aucun particulier ne suit. Les données existent — mais
+      elles dorment dans des portails publics dispersés, des dépôts
+      réglementaires et des PDF que personne ne lit.
+    </p>
+
+    <p>
+      La prémisse d'ARBITORIA est simple : un ménage devrait
+      pouvoir voir les vrais chiffres de son propre pays, à ses
+      propres conditions, sans contenu sponsorisé qui interfère.
+    </p>
+
+    <h2>Ce que la plateforme fait</h2>
+    <ul>
+      <li><strong>Salaire</strong> — brut-net par région, secteur, type de contrat, avec données de percentiles réelles.</li>
+      <li><strong>Logement</strong> — fourchettes de loyers et de prix d'achat par commune, simulation des droits de mutation, simulateur de scénarios hypothécaires.</li>
+      <li><strong>Charges</strong> — électricité, gaz, internet, mobile — tarifs actuels issus des dépôts réglementaires, pas de comparateurs sponsorisés par affiliation.</li>
+      <li><strong>Assurance</strong> — typologie des produits courants, couverture réglementaire de base, et les questions à poser avant de signer.</li>
+      <li><strong>Prêts &amp; investissement</strong> — fourchettes TAEG par produit, instruments fiscalement avantageux, structures spécifiques au pays.</li>
+    </ul>
+
+    <div class="project-page__stack">
+      Stack — React (frontend) · FastAPI (backend Python) · PostgreSQL · Vercel + Heroku · i18n (FR/NL/EN)
+    </div>
+
+    <h2>Ce que la plateforme ne fait pas, délibérément</h2>
+    <p>
+      Pas d'avis. Pas de liens d'affiliation. Pas de placements
+      sponsorisés. Pas de classements « meilleur de ». Le
+      positionnement est qu'une plateforme qui mélange transparence
+      et placement payant compromet la transparence. Une note de
+      4,7 étoiles ne signifie rien si la note est l'effet de bord
+      de qui a payé le plus.
+    </p>
+
+    <p class="project-page__quote">
+      La plateforme ne dit pas aux utilisateurs ce qu'il faut faire.
+      Elle leur montre ce qui est vrai, et les laisse décider.
+    </p>
+
+    <h2>Pourquoi ça marche dans deux pays</h2>
+    <p>
+      La Belgique et la France partagent des racines réglementaires
+      mais diffèrent sur les tranches d'imposition, les charges
+      sociales, les règles régionales du logement, les conventions
+      de nommage des produits. Chaque catégorie doit être
+      implémentée en tenant compte du pays : un calcul de salaire
+      en Wallonie n'est pas identique à un calcul en Île-de-France,
+      et une simulation hypothécaire en Flandre a des droits de
+      mutation différents qu'à Bruxelles-Capitale.
+    </p>
+
+    <p>
+      L'architecture traite le pays comme paramètre de premier
+      ordre partout — schéma, calcul, copie, présentation. C'est le
+      même motif qui rend la plateforme extensible à de nouveaux
+      pays, ce que Salaire-Plus a fait en premier pour le verticale
+      salarial.
+    </p>
+
+    <h2>Ce que j'ai appris en la construisant</h2>
+    <ul>
+      <li><strong>Les données officielles sont plus difficiles à ingérer que les données scrapées.</strong> Les portails publics changent de format. Les PDF des régulateurs sont réémis en cours d'année. Le travail ennuyeux de surveillance des sources, c'est le travail.</li>
+      <li><strong>La confiance se construit par ce qu'on refuse de faire.</strong> Chaque « non — on ne prendra pas ce revenu d'affiliation » crée plus de crédibilité qu'une fonctionnalité supplémentaire.</li>
+      <li><strong>Le multi-pays n'est pas une complexité multiplicative, c'est structurel.</strong> Soit l'architecture traite le pays comme axe principal, soit chaque fonctionnalité est ré-implémentée par pays.</li>
+      <li><strong>SEO depuis l'utilité, pas le contenu.</strong> Presque tout le trafic vient de gens qui cherchent des calculs précis (« salaire net Belgique 2026 », « TVA réduite logement »). Le contenu mérite son rang en répondant vraiment à la question.</li>
+    </ul>
+
+    <h2>Chiffres</h2>
+    <ul>
+      <li><strong>~300 visiteurs / jour</strong> — vérifié Cloudflare, sans acquisition payante.</li>
+      <li><strong>2 pays</strong> — Belgique, France, tous deux entièrement couverts.</li>
+      <li><strong>3 langues</strong> — français, néerlandais, anglais.</li>
+      <li><strong>0 lien d'affiliation</strong> — par conception, en permanence.</li>
+    </ul>
+
+    <h2>Pourquoi cela compte pour la prochaine étape</h2>
+    <p>
+      ARBITORIA est la plus petite version du travail que je veux
+      faire ensuite : produits transfrontaliers grand public où la
+      nuance réglementaire et la profondeur linguistique comptent
+      toutes les deux. Les compétences que cela a demandées —
+      conception de schéma sensible au pays, frontend
+      multi-locale, recherche réglementaire, retenue produit
+      délibérée — sont les mêmes compétences dont a besoin toute
+      équipe qui construit des outils transfrontaliers en fintech
+      ou en assurance.
+    </p>
+
+    <p>
+      En ligne sur <a href="https://arbitoria.com" target="_blank" rel="noopener">arbitoria.com</a>.
+    </p>
+
+  </article>
+
+</body>
+</html>

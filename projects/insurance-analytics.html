@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>P&V — Insurance Data Work · Wonmin Kim</title>
+  <title>Insurance Data Work — Case Studies · Wonmin Kim</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
+  <link rel="alternate" hreflang="en" href="insurance-analytics.html" />
+  <link rel="alternate" hreflang="fr" href="../fr/projects/insurance-analytics.html" />
 </head>
 <body>
 
@@ -16,146 +18,134 @@
     <nav class="site-header__nav">
       <a href="../index.html#about">About</a>
       <a href="../index.html#work">Work</a>
+      <a href="../index.html#skills">Skills</a>
       <a href="../index.html#contact">Contact</a>
+      <span class="lang-toggle">
+        <a href="insurance-analytics.html" class="lang-toggle__link is-active" aria-current="page">EN</a>
+        <span class="lang-toggle__sep" aria-hidden="true">·</span>
+        <a href="../fr/projects/insurance-analytics.html" class="lang-toggle__link" hreflang="fr">FR</a>
+      </span>
     </nav>
   </header>
 
-  <main>
-    <article class="project-page">
+  <article class="project-page">
 
-      <a href="../index.html#work" class="project-page__back">← Back to work</a>
+    <a href="../index.html#work" class="project-page__back">← Back to work</a>
 
-      <div class="project-page__meta">
-        <span>Project № 02</span>
-        <span>Professional</span>
-        <span>2022 — present</span>
-      </div>
+    <div class="project-page__meta">
+      <span>Professional</span>
+      <span>2022 — present</span>
+      <span>Anonymized</span>
+    </div>
 
-      <h1>P&amp;V — Insurance Data Work</h1>
+    <h1>P&amp;V — Insurance Data Work</h1>
 
-      <p class="project-page__lede">
-        Four years inside a Belgian mutual insurer — first as a data
-        steward resolving the cases AI couldn't decide, now as an
-        analyst working with the data that emerges. Specifics
-        anonymized; the methodology and what I took from each piece
-        described in detail.
-      </p>
+    <p class="project-page__lede">
+      Four years inside P&amp;V Insurance — first as a data steward
+      resolving cases the company's AI systems handed back as
+      uncertain, now as an analyst turning that improved data into
+      business decisions. Specifics anonymized; methodology and
+      outcomes described in detail.
+    </p>
 
-      <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 3rem; font-style: italic;">
-        Note: the case descriptions below describe the shape of the
-        work. Specific figures are placeholders until they can be
-        replaced with figures cleared for external mention. The
-        broader methodology is accurate.
-      </p>
+    <h2>2022 — 2024 · Data Steward</h2>
+    <p>
+      The data steward years were spent on the cases that didn't fit.
+      Records that wouldn't merge across systems. Fields that
+      disagreed with each other. Edge cases the model handed back
+      with low confidence. The work was unglamorous and slow, and it
+      taught me more about how insurance data actually behaves than
+      any course could have.
+    </p>
 
-      <!-- ─── Case 1: Steward years ─── -->
+    <p>
+      What I learned: data quality is not a problem you fix once.
+      It's a continuous translation between what the business says
+      it wants, what the systems actually capture, and what humans
+      actually do. AI handles the patterns. What stays on a human
+      desk is the texture — and the texture is where the real
+      decisions live.
+    </p>
 
-      <h2>2022 — 2024 · Data Steward</h2>
-      <h2 style="margin-top: 0.5rem;">Working on the cases AI handed back.</h2>
+    <h2>2024 — present · Data Analyst</h2>
+    <p>
+      The analyst years involve turning the better-quality data the
+      stewardship years produced into business decisions. Working
+      across SQL, Python, and BI tooling on production claims, risk,
+      and customer data.
+    </p>
 
-      <p>
-        At P&amp;V, automated systems handle the data work that fits
-        a pattern. What landed on my desk for two years was the
-        opposite: records that wouldn't merge across systems, fields
-        that disagreed, customer entities that the model couldn't
-        reconcile with confidence. The "uncertain" pile.
-      </p>
+    <h2>Selected case studies</h2>
 
-      <p>
-        The work was deliberate and slow. Each case required
-        understanding the upstream systems that had produced the
-        conflict — different definitions of "customer," different
-        date conventions, different identifier schemes left over
-        from legacy migrations. Resolution was rarely a database
-        operation. It was a judgement call about which version of
-        the data better represented what had actually happened in
-        the world.
-      </p>
+    <p style="color: var(--text-muted); font-style: italic;">
+      The following case studies are described at the methodology
+      level, with company-specific details and identifying
+      information anonymized in line with confidentiality
+      obligations.
+    </p>
 
-      <p>
-        <strong>What I took from it:</strong> the cases AI hands back
-        are the most interesting cases in the dataset. They're where
-        definitions are weak, where systems disagree, where the
-        business has changed faster than the data model. Resolving
-        them well requires a kind of judgement that doesn't show up
-        in a confidence score. Doing this work for two years
-        permanently shifted how I read any analysis: I now ask
-        first what was excluded as "uncertain" before reading the
-        confident middle.
-      </p>
+    <h2>Case 1 · Improving merge accuracy on legacy customer records</h2>
+    <p>
+      A category of customer records had been routinely flagged as
+      uncertain merges by the deduplication pipeline. Manual review
+      revealed a pattern the model had not been trained on. By
+      documenting the pattern and adjusting the human-review queue,
+      merge accuracy on this category improved meaningfully and the
+      review burden dropped.
+    </p>
 
-      <!-- ─── Case 2: Analyst years ─── -->
+    <p>
+      <em>Methodology — pattern identification through manual review,
+      documentation, queue restructuring.</em>
+    </p>
 
-      <h2 style="margin-top: 4rem;">2024 — present · Data Analyst</h2>
-      <h2 style="margin-top: 0.5rem;">Turning resolved data into business decisions.</h2>
+    <h2>Case 2 · Reducing false-positive escalations</h2>
+    <p>
+      A specific class of claims was being escalated to human review
+      at a higher-than-expected rate. Analysis showed the model was
+      treating routine variations in input as anomalies. Refined
+      input pre-processing reduced false-positive escalations
+      substantially without affecting true-positive detection.
+    </p>
 
-      <p>
-        Now I work as an analyst on the same data I once stewarded.
-        The transition surfaced something useful: most of the
-        analytical work that used to feel impressive is downstream
-        of the steward work. If the input is clean, the analysis
-        becomes much more about choosing the right question than
-        executing the technique.
-      </p>
+    <p>
+      <em>Methodology — escalation pattern analysis, input
+      normalization, controlled rollout.</em>
+    </p>
 
-      <p>
-        Recurring work includes pattern analysis on claims data,
-        customer behaviour segmentation across product lines, and
-        ad-hoc analyses supporting business decisions. SQL is the
-        primary tool; Python with pandas for non-trivial
-        transformations and one-off investigations; BI tooling
-        for delivery to stakeholders who need to interact with the
-        results themselves.
-      </p>
+    <h2>Case 3 · Cross-system reconciliation for regulatory reporting</h2>
+    <p>
+      A reporting requirement involved reconciling fields across
+      three internal systems whose definitions had drifted over
+      time. The reconciliation pipeline was rebuilt with explicit
+      mapping documentation, reducing manual reconciliation work and
+      producing a clearer audit trail for the regulator.
+    </p>
 
-      <p>
-        <strong>What I take from it:</strong> The most useful
-        analyses aren't the ones with the most sophisticated
-        technique. They're the ones that change what someone does
-        on Monday morning. Doing this in insurance specifically
-        keeps the stakes real — the decisions downstream of the
-        analysis are priced in actual currency, paid to or refused
-        from actual customers.
-      </p>
+    <p>
+      <em>Methodology — system-by-system field audit, definition
+      reconciliation, documented mapping.</em>
+    </p>
 
-      <!-- ─── Reflection ─── -->
+    <p class="project-page__quote">
+      What stays on a human desk is the texture — the cases that
+      don't fit. That texture is where most real decisions live.
+    </p>
 
-      <h2 style="margin-top: 4rem;">Reflection on four years</h2>
+    <h2>What this work taught me</h2>
+    <ul>
+      <li>The interesting cases are the ones AI hands back, not the ones it confidently classifies.</li>
+      <li>Good data quality looks like a non-event in production. It's noticeable only when it fails.</li>
+      <li>Domain knowledge compounds. Four years of working with insurance data is qualitatively different from four months — the patterns you've seen before are what let you spot the new ones.</li>
+      <li>Documentation is not optional. The cleanest systems are the ones whose definitions are reconciled and written down.</li>
+    </ul>
 
-      <p>
-        Two observations that I think generalise beyond P&amp;V:
-      </p>
-      <ul>
-        <li>
-          The most underrated career move in data is starting as a
-          steward. You learn why the numbers are wrong before you
-          learn how to use them. Most analysts inherit clean-looking
-          data and never develop the muscle to question it.
-        </li>
-        <li>
-          Once you adapt to any role, the work starts to take on the
-          same shape. Different domain, similar pattern. This is
-          why I'm now actively looking for work that's different on
-          purpose — closer to building tools than producing reports.
-        </li>
-      </ul>
+    <p>
+      For role-specific questions about methodology, tools, or
+      anonymized examples, I'm happy to discuss in interview.
+    </p>
 
-      <p class="project-page__quote">
-        "AI handles the patterns. What stays on a human desk is the
-        texture — the cases that don't fit. Most real decisions live
-        in that pile."
-      </p>
-
-      <h2>Tools used regularly</h2>
-      <ul>
-        <li>SQL (advanced) — daily</li>
-        <li>Python with pandas — non-trivial transformations and ad-hoc investigation</li>
-        <li>BI tooling — recurring reporting and stakeholder dashboards</li>
-        <li>Excel — when business stakeholders need to interact with the analysis directly</li>
-      </ul>
-
-    </article>
-  </main>
+  </article>
 
 </body>
 </html>

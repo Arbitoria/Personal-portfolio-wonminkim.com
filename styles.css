@@ -785,3 +785,117 @@ em {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ─── Traction strip (NEW) ───────────────────── */
+
+.traction {
+  background: var(--paper);
+  padding: 4rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.traction__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+@media (max-width: 800px) {
+  .traction__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.traction__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  border-left: 1px solid var(--line);
+}
+
+.traction__item:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+@media (max-width: 800px) {
+  .traction__item:nth-child(3) {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+.traction__num {
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 96;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.traction__label {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.traction__note {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ─── Language toggle ────────────────────────── */
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--line);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.lang-toggle__link {
+  color: var(--text-muted);
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.lang-toggle__link.is-active {
+  color: var(--accent);
+  cursor: default;
+}
+
+.lang-toggle__link:not(.is-active):hover {
+  color: var(--text);
+  opacity: 1;
+}
+
+.lang-toggle__sep {
+  color: var(--text-dim);
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  .lang-toggle {
+    margin-left: 0.75rem;
+    padding-left: 0.75rem;
+    font-size: 0.72rem;
+  }
+}

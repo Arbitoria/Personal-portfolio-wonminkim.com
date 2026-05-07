@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travaux sur données d'assurance — Études de cas · Wonmin Kim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="alternate" hreflang="en" href="../../projects/insurance-analytics.html" />
+  <link rel="alternate" hreflang="fr" href="insurance-analytics.html" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="site-header__brand">Wonmin Kim</a>
+    <nav class="site-header__nav">
+      <a href="../index.html#about">Parcours</a>
+      <a href="../index.html#work">Travaux</a>
+      <a href="../index.html#skills">Outils</a>
+      <a href="../index.html#contact">Contact</a>
+      <span class="lang-toggle">
+        <a href="../../projects/insurance-analytics.html" class="lang-toggle__link" hreflang="en">EN</a>
+        <span class="lang-toggle__sep" aria-hidden="true">·</span>
+        <a href="insurance-analytics.html" class="lang-toggle__link is-active" aria-current="page">FR</a>
+      </span>
+    </nav>
+  </header>
+
+  <article class="project-page">
+
+    <a href="../index.html#work" class="project-page__back">← Retour aux travaux</a>
+
+    <div class="project-page__meta">
+      <span>Professionnel</span>
+      <span>2022 — actuellement</span>
+      <span>Anonymisé</span>
+    </div>
+
+    <h1>P&amp;V — Travaux sur données d'assurance</h1>
+
+    <p class="project-page__lede">
+      Quatre années chez P&amp;V Assurance — d'abord comme data
+      steward à résoudre les cas que les systèmes d'IA de
+      l'entreprise renvoyaient avec incertitude, maintenant comme
+      analyst à transformer ces données améliorées en décisions
+      métier. Spécificités anonymisées ; méthodologie et résultats
+      décrits en détail.
+    </p>
+
+    <h2>2022 — 2024 · Data Steward</h2>
+    <p>
+      Les années de data steward étaient consacrées aux cas qui ne
+      s'inscrivaient pas. Enregistrements qui refusaient de fusionner
+      entre systèmes. Champs qui se contredisaient mutuellement. Cas
+      limites que le modèle renvoyait avec une faible confiance. Le
+      travail était ingrat et lent, et il m'a appris plus sur le
+      comportement réel des données d'assurance qu'aucun cours
+      n'aurait pu le faire.
+    </p>
+
+    <p>
+      Ce que j'ai appris : la qualité des données n'est pas un
+      problème qu'on règle une fois pour toutes. C'est une
+      traduction continue entre ce que le métier dit vouloir, ce que
+      les systèmes capturent réellement, et ce que les humains font
+      effectivement. L'IA gère les motifs. Ce qui reste sur le
+      bureau d'un humain, c'est la texture — et la texture, c'est
+      là que vivent les vraies décisions.
+    </p>
+
+    <h2>2024 — actuellement · Data Analyst</h2>
+    <p>
+      Les années d'analyst impliquent de transformer les données de
+      meilleure qualité produites par les années de stewardship en
+      décisions métier. Travail à travers SQL, Python, et outillage
+      BI sur des données de production de sinistres, de risque et
+      de clients.
+    </p>
+
+    <h2>Études de cas sélectionnées</h2>
+
+    <p style="color: var(--text-muted); font-style: italic;">
+      Les études de cas suivantes sont décrites au niveau
+      méthodologique, avec les détails et informations
+      d'identification spécifiques anonymisés conformément aux
+      obligations de confidentialité.
+    </p>
+
+    <h2>Cas 1 · Amélioration de la précision de fusion sur des enregistrements clients legacy</h2>
+    <p>
+      Une catégorie d'enregistrements clients était régulièrement
+      signalée comme fusion incertaine par le pipeline de
+      déduplication. La revue manuelle a révélé un motif sur lequel
+      le modèle n'avait pas été entraîné. En documentant le motif
+      et en ajustant la file d'attente de revue humaine, la
+      précision de fusion sur cette catégorie s'est améliorée
+      significativement et la charge de revue a diminué.
+    </p>
+
+    <p>
+      <em>Méthodologie — identification de motifs par revue
+      manuelle, documentation, restructuration de file d'attente.</em>
+    </p>
+
+    <h2>Cas 2 · Réduction des escalades faux-positives</h2>
+    <p>
+      Une classe spécifique de sinistres était escaladée vers la
+      revue humaine à un taux supérieur aux attentes. L'analyse a
+      montré que le modèle traitait des variations routinières
+      d'entrée comme des anomalies. Un pré-traitement d'entrée
+      affiné a réduit substantiellement les escalades
+      faux-positives sans affecter la détection des vrais positifs.
+    </p>
+
+    <p>
+      <em>Méthodologie — analyse des motifs d'escalade,
+      normalisation des entrées, déploiement contrôlé.</em>
+    </p>
+
+    <h2>Cas 3 · Réconciliation inter-systèmes pour le reporting réglementaire</h2>
+    <p>
+      Une exigence de reporting impliquait de réconcilier des
+      champs entre trois systèmes internes dont les définitions
+      avaient dérivé au fil du temps. Le pipeline de réconciliation
+      a été reconstruit avec une documentation explicite des
+      mappings, réduisant le travail de réconciliation manuelle et
+      produisant une piste d'audit plus claire pour le régulateur.
+    </p>
+
+    <p>
+      <em>Méthodologie — audit champ par champ système par
+      système, réconciliation des définitions, mapping documenté.</em>
+    </p>
+
+    <p class="project-page__quote">
+      Ce qui reste sur le bureau d'un humain, c'est la texture —
+      les cas qui ne s'inscrivent pas. Cette texture, c'est là que
+      vivent la plupart des décisions réelles.
+    </p>
+
+    <h2>Ce que ce travail m'a appris</h2>
+    <ul>
+      <li>Les cas intéressants sont ceux que l'IA renvoie, pas ceux qu'elle classe avec confiance.</li>
+      <li>Une bonne qualité des données ressemble à un non-événement en production. Elle ne se remarque que lorsqu'elle échoue.</li>
+      <li>La connaissance du domaine se compose. Quatre ans de travail avec des données d'assurance est qualitativement différent de quatre mois — les motifs déjà vus sont ce qui permet de repérer les nouveaux.</li>
+      <li>La documentation n'est pas optionnelle. Les systèmes les plus propres sont ceux dont les définitions sont réconciliées et écrites.</li>
+    </ul>
+
+    <p>
+      Pour des questions spécifiques sur la méthodologie, les
+      outils, ou des exemples anonymisés, je suis heureux d'en
+      discuter en entretien.
+    </p>
+
+  </article>
+
+</body>
+</html>
