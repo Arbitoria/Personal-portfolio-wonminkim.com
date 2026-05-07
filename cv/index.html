@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Won-min Kim — Data & Automation Analyst</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ===== Base ===== */
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ===== Language Switcher ===== */
+  .lang-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #1a1a2e;
+    padding: 12px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+
+  .lang-bar-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 16px;
+  }
+
+  .lang-btn {
+    padding: 8px 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+
+  .lang-btn:hover {
+    border-color: #e8b86d;
+    color: #e8b86d;
+  }
+
+  .lang-btn.active {
+    background: #e8b86d;
+    border-color: #e8b86d;
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  /* ===== Main Layout ===== */
+  .cv-container {
+    max-width: 920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: calc(100vh - 56px);
+  }
+
+  /* ===== Sidebar ===== */
+  .sidebar {
+    background: #1a1a2e;
+    color: #ddd;
+    padding: 40px 24px;
+  }
+
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border: 3px solid #e8b86d;
+  }
+
+  .sidebar-name {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  .sidebar-title {
+    text-align: center;
+    font-size: 13px;
+    color: #e8b86d;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .sidebar-section {
+    margin-bottom: 28px;
+  }
+
+  .sidebar-section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #ccc;
+  }
+
+  .contact-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    fill: #e8b86d;
+  }
+
+  .contact-item a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-item a:hover {
+    color: #e8b86d;
+  }
+
+  /* Skills */
+  .skill-category {
+    margin-bottom: 12px;
+  }
+
+  .skill-category-label {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .skill-tag {
+    display: inline-block;
+    background: rgba(232, 184, 109, 0.15);
+    color: #e8b86d;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 4px 6px 0;
+  }
+
+  /* Languages with bars */
+  .lang-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .lang-name {
+    font-size: 13px;
+    color: #ccc;
+    min-width: 80px;
+  }
+
+  .lang-dots {
+    display: flex;
+    gap: 5px;
+  }
+
+  .lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .lang-dot.filled {
+    background: #e8b86d;
+  }
+
+  /* ===== Main Content ===== */
+  .main-content {
+    background: #fff;
+    padding: 40px 36px;
+  }
+
+  .main-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+  }
+
+  .main-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 32px;
+  }
+
+  .section {
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  .profile-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* Experience */
+  .exp-item {
+    margin-bottom: 24px;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .exp-role {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .exp-date {
+    font-size: 13px;
+    color: #999;
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 8px;
+  }
+
+  .exp-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exp-list li {
+    font-size: 13px;
+    color: #555;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 5px;
+    line-height: 1.6;
+  }
+
+  .exp-list li::before {
+    content: '\2022';
+    position: absolute;
+    left: 4px;
+    color: #e8b86d;
+    font-weight: 700;
+  }
+
+  /* Education */
+  .edu-degree {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .edu-school {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 4px;
+  }
+
+  .edu-detail {
+    font-size: 13px;
+    color: #555;
+    font-style: italic;
+  }
+
+  /* Projects */
+  .project-item {
+    margin-bottom: 18px;
+  }
+
+  .project-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+
+  .project-name a {
+    color: #1a1a2e;
+    text-decoration: none;
+    border-bottom: 1px dashed #e8b86d;
+    transition: color 0.2s;
+  }
+
+  .project-name a:hover {
+    color: #e8b86d;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 3px;
+  }
+
+  /* Certifications */
+  .cert-item {
+    font-size: 13px;
+    color: #555;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 5px;
+    line-height: 1.6;
+  }
+
+  .cert-item::before {
+    content: '\2022';
+    position: absolute;
+    left: 4px;
+    color: #e8b86d;
+    font-weight: 700;
+  }
+
+  .cert-status {
+    font-size: 11px;
+    color: #e8b86d;
+    font-weight: 500;
+  }
+
+  /* Interests */
+  .interest-tag {
+    display: inline-block;
+    background: #f5f5f5;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 6px 8px 0;
+    border: 1px solid #e0e0e0;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .cv-container {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      padding: 30px 20px;
+    }
+    .main-content {
+      padding: 30px 20px;
+    }
+    .main-name {
+      font-size: 26px;
+    }
+  }
+
+  /* ===== Print-friendly ===== */
+  @media print {
+    .lang-bar { display: none !important; }
+    body { background: #fff; }
+    .cv-container {
+      max-width: 100%;
+      grid-template-columns: 240px 1fr;
+      min-height: auto;
+      page-break-inside: avoid;
+    }
+    .sidebar {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 24px 18px;
+    }
+    .main-content { padding: 24px 26px; }
+    .section { page-break-inside: avoid; }
+    .exp-item { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Language Switcher -->
+<nav class="lang-bar">
+  <div class="lang-bar-inner">
+    <button class="lang-btn active" onclick="switchLang('en')">English</button>
+    <button class="lang-btn" onclick="switchLang('fr')">Français</button>
+    <button class="lang-btn" onclick="switchLang('nl')">Nederlands</button>
+    <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+  </div>
+</nav>
+
+<div class="cv-container">
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <img src="photo.jpg" alt="Won-min Kim" class="profile-photo">
+    <div class="sidebar-name">Won-min Kim</div>
+    <div class="sidebar-title" data-i18n="sidebar_title">Data & Automation Analyst</div>
+
+    <!-- Contact -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title" data-i18n="contact_title">Contact</div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        <a href="https://linkedin.com/in/wonminkim" target="_blank" rel="noopener noreferrer">linkedin.com/in/wonminkim</a>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span>Belgium</span>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title" data-i18n="skills_title">Skills</div>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-i18n="cat_prog">Programming</div>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SAS</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">HTML/CSS/JS</span>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-i18n="cat_tools">Tools & Platforms</div>
+        <span class="skill-tag">Salesforce</span>
+        <span class="skill-tag">CICS</span>
+        <span class="skill-tag">Cloudflare</span>
+        <span class="skill-tag">Claude AI</span>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-i18n="cat_data">Data & Office</div>
+        <span class="skill-tag" data-i18n="sk_excel">Excel (Pivot, VBA)</span>
+        <span class="skill-tag">Power Query</span>
+        <span class="skill-tag">GDPR</span>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-label" data-i18n="cat_method">Methodology</div>
+        <span class="skill-tag">Vibe Coding</span>
+        <span class="skill-tag" data-i18n="sk_auto">Process Automation</span>
+        <span class="skill-tag" data-i18n="sk_gov">Data Governance</span>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title" data-i18n="languages_title">Languages</div>
+      <div class="lang-item">
+        <span class="lang-name" data-i18n="lang_korean">Korean</span>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+        </div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name" data-i18n="lang_french">French</span>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name" data-i18n="lang_english">English</span>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name" data-i18n="lang_dutch">Dutch</span>
+        <div class="lang-dots">
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot filled"></div>
+          <div class="lang-dot"></div>
+          <div class="lang-dot"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+    <h1 class="main-name">Won-min Kim</h1>
+    <div class="main-title" data-i18n="main_title">Data & Automation Analyst</div>
+
+    <!-- Profile -->
+    <div class="section">
+      <div class="section-title" data-i18n="profile_section">Profile</div>
+      <p class="profile-text" data-i18n="profile_text">Data professional with 3+ years in the Belgian insurance sector (P&V Group), specializing in CRM analytics, data governance, and process automation. Automated the team email system and built two multilingual web platforms using AI-assisted development. Driven by a mission to eliminate manual inefficiencies through automation and data-driven solutions.</p>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+      <div class="section-title" data-i18n="experience_section">Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role" data-i18n="exp1_role">Junior Analyst — CR Team</span>
+          <span class="exp-date" data-i18n="exp1_date">Oct 2024 — Present</span>
+        </div>
+        <div class="exp-company">P&V Group · Belgium</div>
+        <ul class="exp-list">
+          <li data-i18n="exp1_d1">Automated the team email system using Python, eliminating repetitive manual tasks and improving workflow efficiency</li>
+          <li data-i18n="exp1_d2">Perform CRM data analysis and generate KPI dashboard reports using SAS, Salesforce, and Python to support business decision-making</li>
+          <li data-i18n="exp1_d3">Collaborate with cross-functional teams to derive actionable customer insights and optimize campaign targeting</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Data Steward</span>
+          <span class="exp-date" data-i18n="exp2_date">Oct 2022 — Oct 2024</span>
+        </div>
+        <div class="exp-company">P&V Group · Belgium</div>
+        <ul class="exp-list">
+          <li data-i18n="exp2_d1">Managed data quality across organizational databases, ensuring GDPR compliance and data integrity for customer records</li>
+          <li data-i18n="exp2_d2">Implemented data governance best practices and standardized data validation processes across departments</li>
+          <li data-i18n="exp2_d3">Conducted quarterly data quality audits across multiple business units, identifying and resolving data integrity issues</li>
+          <li data-i18n="exp2_d4">Collaborated with IT and business teams to build ETL workflows and resolve cross-system data inconsistencies</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role" data-i18n="exp3_role">Hotel Staff — Restaurant & Reception</span>
+          <span class="exp-date">2020 — 2022</span>
+        </div>
+        <div class="exp-company">Belgium</div>
+        <ul class="exp-list">
+          <li data-i18n="exp3_d1">Developed strong interpersonal skills by rapidly assessing individual customer needs and adapting communication style accordingly — a foundation for customer-centric data analysis</li>
+          <li data-i18n="exp3_d2">Managed front desk operations, guest relations, and F&B service across two departments over 2 years</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+      <div class="section-title" data-i18n="projects_section">Projects</div>
+
+      <div class="project-item">
+        <div class="project-name"><a href="https://salaire-plus.com" target="_blank" rel="noopener noreferrer">salaire-plus.com</a></div>
+        <p class="project-desc" data-i18n="proj1_desc">Belgian salary guide platform — Comprehensive multilingual (FR/NL/EN/KO) web application providing minimum wage data, salary comparisons by profession, tax information, and indexation details. Built with AI-assisted development (Vibe Coding) and deployed on Cloudflare.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name"><a href="https://arbitoria.com" target="_blank" rel="noopener noreferrer">arbitoria.com</a></div>
+        <p class="project-desc" data-i18n="proj2_desc">Financial comparison platform — Multilingual (FR/NL/EN/KO) tool for comparing charges, loans, insurance, real estate, and salary in Belgium. Designed and developed end-to-end using Vibe Coding methodology and Cloudflare infrastructure.</p>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name" data-i18n="proj3_name">Team Email Automation</div>
+        <p class="project-desc" data-i18n="proj3_desc">Automated the CR team's email workflow at P&V Group using Python, replacing manual processes with an automated system to improve team efficiency and reduce human error.</p>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <div class="section-title" data-i18n="education_section">Education</div>
+      <div class="exp-item">
+        <div class="edu-degree" data-i18n="edu_degree">Accounting</div>
+        <div class="edu-school" data-i18n="edu_school">EPHEC — Haute École · Belgium · Graduated 2019</div>
+        <div class="edu-detail" data-i18n="edu_detail">Coursework: Financial Accounting, Cost Analysis, Business Statistics</div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section">
+      <div class="section-title" data-i18n="cert_section">Certifications</div>
+      <div class="cert-item" data-i18n="cert_1">Salesforce Certified Administrator <span class="cert-status">(in progress)</span></div>
+      <div class="cert-item" data-i18n="cert_2">Google Data Analytics Professional Certificate <span class="cert-status">(in progress)</span></div>
+    </div>
+
+    <!-- Interests -->
+    <div class="section">
+      <div class="section-title" data-i18n="interests_section">Interests</div>
+      <div>
+        <span class="interest-tag" data-i18n="int_1">AI / Machine Learning</span>
+        <span class="interest-tag">Vibe Coding</span>
+        <span class="interest-tag" data-i18n="int_2">Open Source</span>
+        <span class="interest-tag" data-i18n="int_3">Cross-cultural Communication</span>
+        <span class="interest-tag" data-i18n="int_4">Language Learning</span>
+        <span class="interest-tag" data-i18n="int_5">Traveling</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  /* ========================================
+     Multilingual Data — EN / FR / NL / KO
+     ======================================== */
+  var translations = {
+    en: {
+      sidebar_title: "Data & Automation Analyst",
+      contact_title: "Contact",
+      skills_title: "Skills",
+      cat_prog: "Programming",
+      cat_tools: "Tools & Platforms",
+      cat_data: "Data & Office",
+      cat_method: "Methodology",
+      sk_excel: "Excel (Pivot, VBA)",
+      sk_auto: "Process Automation",
+      sk_gov: "Data Governance",
+      languages_title: "Languages",
+      lang_korean: "Korean",
+      lang_french: "French",
+      lang_english: "English",
+      lang_dutch: "Dutch",
+      main_title: "Data & Automation Analyst",
+      profile_section: "Profile",
+      profile_text: "Data professional with 3+ years in the Belgian insurance sector (P&V Group), specializing in CRM analytics, data governance, and process automation. Automated the team email system and built two multilingual web platforms using AI-assisted development. Driven by a mission to eliminate manual inefficiencies through automation and data-driven solutions.",
+      experience_section: "Experience",
+      exp1_role: "Junior Analyst \u2014 CR Team",
+      exp1_date: "Oct 2024 \u2014 Present",
+      exp1_d1: "Automated the team email system using Python, eliminating repetitive manual tasks and improving workflow efficiency",
+      exp1_d2: "Perform CRM data analysis and generate KPI dashboard reports using SAS, Salesforce, and Python to support business decision-making",
+      exp1_d3: "Collaborate with cross-functional teams to derive actionable customer insights and optimize campaign targeting",
+      exp2_date: "Oct 2022 \u2014 Oct 2024",
+      exp2_d1: "Managed data quality across organizational databases, ensuring GDPR compliance and data integrity for customer records",
+      exp2_d2: "Implemented data governance best practices and standardized data validation processes across departments",
+      exp2_d3: "Conducted quarterly data quality audits across multiple business units, identifying and resolving data integrity issues",
+      exp2_d4: "Collaborated with IT and business teams to build ETL workflows and resolve cross-system data inconsistencies",
+      exp3_role: "Hotel Staff \u2014 Restaurant & Reception",
+      exp3_d1: "Developed strong interpersonal skills by rapidly assessing individual customer needs and adapting communication style accordingly \u2014 a foundation for customer-centric data analysis",
+      exp3_d2: "Managed front desk operations, guest relations, and F&B service across two departments over 2 years",
+      projects_section: "Projects",
+      proj1_desc: "Belgian salary guide platform \u2014 Comprehensive multilingual (FR/NL/EN/KO) web application providing minimum wage data, salary comparisons by profession, tax information, and indexation details. Built with AI-assisted development (Vibe Coding) and deployed on Cloudflare.",
+      proj2_desc: "Financial comparison platform \u2014 Multilingual (FR/NL/EN/KO) tool for comparing charges, loans, insurance, real estate, and salary in Belgium. Designed and developed end-to-end using Vibe Coding methodology and Cloudflare infrastructure.",
+      proj3_name: "Team Email Automation",
+      proj3_desc: "Automated the CR team\u2019s email workflow at P&V Group using Python, replacing manual processes with an automated system to improve team efficiency and reduce human error.",
+      education_section: "Education",
+      edu_degree: "Accounting",
+      edu_school: "EPHEC \u2014 Haute \u00c9cole \u00b7 Belgium \u00b7 Graduated 2019",
+      edu_detail: "Coursework: Financial Accounting, Cost Analysis, Business Statistics",
+      cert_section: "Certifications",
+      cert_1: "Salesforce Certified Administrator <span class=\"cert-status\">(in progress)</span>",
+      cert_2: "Google Data Analytics Professional Certificate <span class=\"cert-status\">(in progress)</span>",
+      interests_section: "Interests",
+      int_1: "AI / Machine Learning",
+      int_2: "Open Source",
+      int_3: "Cross-cultural Communication",
+      int_4: "Language Learning",
+      int_5: "Traveling"
+    },
+    fr: {
+      sidebar_title: "Analyste Data & Automatisation",
+      contact_title: "Contact",
+      skills_title: "Comp\u00e9tences",
+      cat_prog: "Programmation",
+      cat_tools: "Outils & Plateformes",
+      cat_data: "Donn\u00e9es & Bureau",
+      cat_method: "M\u00e9thodologie",
+      sk_excel: "Excel (TCD, VBA)",
+      sk_auto: "Automatisation",
+      sk_gov: "Gouvernance des donn\u00e9es",
+      languages_title: "Langues",
+      lang_korean: "Cor\u00e9en",
+      lang_french: "Fran\u00e7ais",
+      lang_english: "Anglais",
+      lang_dutch: "N\u00e9erlandais",
+      main_title: "Analyste Data & Automatisation",
+      profile_section: "Profil",
+      profile_text: "Professionnel de la donn\u00e9e avec plus de 3 ans d\u2019exp\u00e9rience dans le secteur de l\u2019assurance belge (P&V Group), sp\u00e9cialis\u00e9 en analytique CRM, gouvernance des donn\u00e9es et automatisation des processus. A automatis\u00e9 le syst\u00e8me de messagerie de l\u2019\u00e9quipe et d\u00e9velopp\u00e9 deux plateformes web multilingues gr\u00e2ce au d\u00e9veloppement assist\u00e9 par IA. Motiv\u00e9 par la volont\u00e9 d\u2019\u00e9liminer les inefficacit\u00e9s manuelles par l\u2019automatisation et les solutions data.",
+      experience_section: "Exp\u00e9rience",
+      exp1_role: "Analyste Junior \u2014 \u00c9quipe CR",
+      exp1_date: "Oct 2024 \u2014 Pr\u00e9sent",
+      exp1_d1: "Automatisation du syst\u00e8me de messagerie de l\u2019\u00e9quipe en Python, supprimant les t\u00e2ches manuelles r\u00e9p\u00e9titives et am\u00e9liorant l\u2019efficacit\u00e9",
+      exp1_d2: "Analyse de donn\u00e9es CRM et g\u00e9n\u00e9ration de rapports KPI et tableaux de bord avec SAS, Salesforce et Python pour soutenir la prise de d\u00e9cision",
+      exp1_d3: "Collaboration avec des \u00e9quipes transversales pour obtenir des insights clients exploitables et optimiser le ciblage des campagnes",
+      exp2_date: "Oct 2022 \u2014 Oct 2024",
+      exp2_d1: "Gestion de la qualit\u00e9 des donn\u00e9es dans les bases organisationnelles, en assurant la conformit\u00e9 RGPD et l\u2019int\u00e9grit\u00e9 des donn\u00e9es clients",
+      exp2_d2: "Mise en \u0153uvre des meilleures pratiques de gouvernance et standardisation des processus de validation des donn\u00e9es",
+      exp2_d3: "Audits trimestriels de qualit\u00e9 des donn\u00e9es dans plusieurs unit\u00e9s, identification et r\u00e9solution des probl\u00e8mes d\u2019int\u00e9grit\u00e9",
+      exp2_d4: "Collaboration avec les \u00e9quipes IT et m\u00e9tier pour construire des workflows ETL et r\u00e9soudre les incoh\u00e9rences inter-syst\u00e8mes",
+      exp3_role: "Personnel h\u00f4telier \u2014 Restaurant & R\u00e9ception",
+      exp3_d1: "D\u00e9veloppement de solides comp\u00e9tences relationnelles par l\u2019\u00e9valuation rapide des besoins individuels des clients et l\u2019adaptation du style de communication \u2014 base de l\u2019analyse centr\u00e9e client",
+      exp3_d2: "Gestion de la r\u00e9ception, des relations clients et du service F&B dans deux d\u00e9partements pendant 2 ans",
+      projects_section: "Projets",
+      proj1_desc: "Guide salarial belge \u2014 Application web multilingue (FR/NL/EN/KO) fournissant des donn\u00e9es sur le salaire minimum, des comparaisons par profession, des informations fiscales et l\u2019indexation. D\u00e9velopp\u00e9e avec le Vibe Coding et d\u00e9ploy\u00e9e sur Cloudflare.",
+      proj2_desc: "Plateforme de comparaison financi\u00e8re \u2014 Outil multilingue (FR/NL/EN/KO) pour comparer charges, pr\u00eats, assurances, immobilier et salaires en Belgique. Con\u00e7u et d\u00e9velopp\u00e9 de bout en bout avec la m\u00e9thodologie Vibe Coding et l\u2019infrastructure Cloudflare.",
+      proj3_name: "Automatisation des e-mails d\u2019\u00e9quipe",
+      proj3_desc: "Automatisation du flux de messagerie de l\u2019\u00e9quipe CR chez P&V Group en Python, rempla\u00e7ant les processus manuels par un syst\u00e8me automatis\u00e9 pour am\u00e9liorer l\u2019efficacit\u00e9 et r\u00e9duire les erreurs humaines.",
+      education_section: "\u00c9ducation",
+      edu_degree: "Comptabilit\u00e9",
+      edu_school: "EPHEC \u2014 Haute \u00c9cole \u00b7 Belgique \u00b7 Dipl\u00f4m\u00e9 en 2019",
+      edu_detail: "Cours : Comptabilit\u00e9 financi\u00e8re, Analyse des co\u00fbts, Statistiques d\u2019entreprise",
+      cert_section: "Certifications",
+      cert_1: "Salesforce Certified Administrator <span class=\"cert-status\">(en cours)</span>",
+      cert_2: "Google Data Analytics Professional Certificate <span class=\"cert-status\">(en cours)</span>",
+      interests_section: "Int\u00e9r\u00eats",
+      int_1: "IA / Apprentissage automatique",
+      int_2: "Open Source",
+      int_3: "Communication interculturelle",
+      int_4: "Apprentissage des langues",
+      int_5: "Voyages"
+    },
+    nl: {
+      sidebar_title: "Data & Automatisering Analist",
+      contact_title: "Contact",
+      skills_title: "Vaardigheden",
+      cat_prog: "Programmeren",
+      cat_tools: "Tools & Platformen",
+      cat_data: "Data & Office",
+      cat_method: "Methodologie",
+      sk_excel: "Excel (Draaitabel, VBA)",
+      sk_auto: "Procesautomatisering",
+      sk_gov: "Datagovernance",
+      languages_title: "Talen",
+      lang_korean: "Koreaans",
+      lang_french: "Frans",
+      lang_english: "Engels",
+      lang_dutch: "Nederlands",
+      main_title: "Data & Automatisering Analist",
+      profile_section: "Profiel",
+      profile_text: "Dataprofessional met meer dan 3 jaar ervaring in de Belgische verzekeringssector (P&V Group), gespecialiseerd in CRM-analyse, datagovernance en procesautomatisering. Heeft het e-mailsysteem van het team geautomatiseerd en twee meertalige webplatformen gebouwd met AI-ondersteunde ontwikkeling. Gedreven door de missie om manuele ineffici\u00ebnties te elimineren door automatisering en datagedreven oplossingen.",
+      experience_section: "Ervaring",
+      exp1_role: "Junior Analist \u2014 CR Team",
+      exp1_date: "Okt 2024 \u2014 Heden",
+      exp1_d1: "Automatisering van het e-mailsysteem van het team met Python, eliminatie van repetitieve handmatige taken en verbetering van de workflow-effici\u00ebntie",
+      exp1_d2: "Uitvoeren van CRM-data-analyse en genereren van KPI-dashboardrapporten met SAS, Salesforce en Python ter ondersteuning van zakelijke besluitvorming",
+      exp1_d3: "Samenwerking met cross-functionele teams om bruikbare klantinzichten te verkrijgen en campagnetargeting te optimaliseren",
+      exp2_date: "Okt 2022 \u2014 Okt 2024",
+      exp2_d1: "Beheer van datakwaliteit in organisatorische databases, met waarborging van AVG-naleving en data-integriteit voor klantgegevens",
+      exp2_d2: "Implementatie van best practices voor datagovernance en standaardisatie van datavalidatieprocessen over afdelingen heen",
+      exp2_d3: "Uitvoering van driemaandelijkse datakwaliteitsaudits in meerdere bedrijfseenheden, identificatie en oplossing van data-integriteitsproblemen",
+      exp2_d4: "Samenwerking met IT- en businessteams om ETL-workflows te bouwen en cross-systeem data-inconsistenties op te lossen",
+      exp3_role: "Hotelpersoneel \u2014 Restaurant & Receptie",
+      exp3_d1: "Ontwikkeling van sterke interpersoonlijke vaardigheden door snel individuele klantbehoeften te beoordelen en communicatiestijl aan te passen \u2014 een basis voor klantgerichte data-analyse",
+      exp3_d2: "Beheer van receptie, klantrelaties en F&B-service in twee afdelingen gedurende 2 jaar",
+      projects_section: "Projecten",
+      proj1_desc: "Belgische salarisgids \u2014 Uitgebreide meertalige (FR/NL/EN/KO) webapplicatie met minimumloongegevens, salarisvergelijkingen per beroep, belastinginformatie en indexatiedetails. Gebouwd met AI-ondersteunde ontwikkeling (Vibe Coding) en ge\u00efmplementeerd op Cloudflare.",
+      proj2_desc: "Financi\u00ebl vergelijkingsplatform \u2014 Meertalig (FR/NL/EN/KO) tool voor het vergelijken van kosten, leningen, verzekeringen, vastgoed en salarissen in Belgi\u00eb. Volledig ontworpen en ontwikkeld met Vibe Coding-methodologie en Cloudflare-infrastructuur.",
+      proj3_name: "Team E-mail Automatisering",
+      proj3_desc: "Automatisering van de e-mailworkflow van het CR-team bij P&V Group met Python, vervanging van handmatige processen door een geautomatiseerd systeem om de teameffici\u00ebntie te verbeteren en menselijke fouten te verminderen.",
+      education_section: "Opleiding",
+      edu_degree: "Boekhouding",
+      edu_school: "EPHEC \u2014 Haute \u00c9cole \u00b7 Belgi\u00eb \u00b7 Afgestudeerd in 2019",
+      edu_detail: "Vakken: Financi\u00eble boekhouding, Kostenanalyse, Bedrijfsstatistiek",
+      cert_section: "Certificeringen",
+      cert_1: "Salesforce Certified Administrator <span class=\"cert-status\">(in uitvoering)</span>",
+      cert_2: "Google Data Analytics Professional Certificate <span class=\"cert-status\">(in uitvoering)</span>",
+      interests_section: "Interesses",
+      int_1: "AI / Machine Learning",
+      int_2: "Open Source",
+      int_3: "Interculturele communicatie",
+      int_4: "Talen leren",
+      int_5: "Reizen"
+    },
+    ko: {
+      sidebar_title: "\ub370\uc774\ud130 & \uc790\ub3d9\ud654 \uc560\ub110\ub9ac\uc2a4\ud2b8",
+      contact_title: "\uc5f0\ub77d\ucc98",
+      skills_title: "\uae30\uc220 \uc5ed\ub7c9",
+      cat_prog: "\ud504\ub85c\uadf8\ub798\ubc0d",
+      cat_tools: "\ud234 & \ud50c\ub7ab\ud3fc",
+      cat_data: "\ub370\uc774\ud130 & \uc624\ud53c\uc2a4",
+      cat_method: "\ubc29\ubc95\ub860",
+      sk_excel: "Excel (\ud53c\ubc97, VBA)",
+      sk_auto: "\ud504\ub85c\uc138\uc2a4 \uc790\ub3d9\ud654",
+      sk_gov: "\ub370\uc774\ud130 \uac70\ubc84\ub10c\uc2a4",
+      languages_title: "\uc5b8\uc5b4",
+      lang_korean: "\ud55c\uad6d\uc5b4",
+      lang_french: "\ud504\ub791\uc2a4\uc5b4",
+      lang_english: "\uc601\uc5b4",
+      lang_dutch: "\ub124\ub35c\ub780\ub4dc\uc5b4",
+      main_title: "\ub370\uc774\ud130 & \uc790\ub3d9\ud654 \uc560\ub110\ub9ac\uc2a4\ud2b8",
+      profile_section: "\ud504\ub85c\ud544",
+      profile_text: "\ubca8\uae30\uc5d0 \ubcf4\ud5d8 \uc5c5\uacc4(P&V Group)\uc5d0\uc11c 3\ub144 \uc774\uc0c1\uc758 \uacbd\ud5d8\uc744 \uac00\uc9c4 \ub370\uc774\ud130 \uc804\ubb38\uac00\ub85c, CRM \ubd84\uc11d, \ub370\uc774\ud130 \uac70\ubc84\ub10c\uc2a4, \ud504\ub85c\uc138\uc2a4 \uc790\ub3d9\ud654\ub97c \uc804\ubb38\uc73c\ub85c \ud569\ub2c8\ub2e4. \ud300 \uba54\uc77c \uc2dc\uc2a4\ud15c\uc744 \uc790\ub3d9\ud654\ud558\uace0 AI \uae30\ubc18 \uac1c\ubc1c\ub85c \ub2e4\uad6d\uc5b4 \uc6f9 \ud50c\ub7ab\ud3fc 2\uac1c\ub97c \uad6c\ucd95\ud588\uc2b5\ub2c8\ub2e4. \uc790\ub3d9\ud654\uc640 \ub370\uc774\ud130 \uae30\ubc18 \uc194\ub8e8\uc158\uc73c\ub85c \uc218\uc791\uc5c5\uc758 \ube44\ud6a8\uc728\uc744 \uc81c\uac70\ud558\ub294 \uac83\uc774 \ubaa9\ud45c\uc785\ub2c8\ub2e4.",
+      experience_section: "\uacbd\ub825",
+      exp1_role: "\uc8fc\ub2c8\uc5b4 \uc560\ub110\ub9ac\uc2a4\ud2b8 \u2014 CR \ud300",
+      exp1_date: "2024\ub144 10\uc6d4 \u2014 \ud604\uc7ac",
+      exp1_d1: "Python\uc744 \ud65c\uc6a9\ud558\uc5ec \ud300 \uba54\uc77c \uc2dc\uc2a4\ud15c\uc744 \uc790\ub3d9\ud654, \ubc18\ubcf5\uc801\uc778 \uc218\uc791\uc5c5\uc744 \uc81c\uac70\ud558\uace0 \uc6cc\ud06c\ud50c\ub85c\uc6b0 \ud6a8\uc728\uc131 \ud5a5\uc0c1",
+      exp1_d2: "SAS, Salesforce, Python\uc744 \ud65c\uc6a9\ud55c CRM \ub370\uc774\ud130 \ubd84\uc11d \ubc0f KPI \ub300\uc2dc\ubcf4\ub4dc \ubcf4\uace0\uc11c \uc0dd\uc131\uc73c\ub85c \ube44\uc988\ub2c8\uc2a4 \uc758\uc0ac\uacb0\uc815 \uc9c0\uc6d0",
+      exp1_d3: "\ud06c\ub85c\uc2a4\ud380\uc158\ub110 \ud300\uacfc \ud611\uc5c5\ud558\uc5ec \uc2e4\ud589 \uac00\ub2a5\ud55c \uace0\uac1d \uc778\uc0ac\uc774\ud2b8 \ub3c4\ucd9c \ubc0f \ucea0\ud398\uc778 \ud0c0\uac9f\ud305 \ucd5c\uc801\ud654",
+      exp2_date: "2022\ub144 10\uc6d4 \u2014 2024\ub144 10\uc6d4",
+      exp2_d1: "\uc870\uc9c1 \ub370\uc774\ud130\ubca0\uc774\uc2a4 \uc804\ubc18\uc758 \ub370\uc774\ud130 \ud488\uc9c8 \uad00\ub9ac, GDPR \uaddc\uc815 \uc900\uc218 \ubc0f \uace0\uac1d \ub808\ucf54\ub4dc \ub370\uc774\ud130 \ubb34\uacb0\uc131 \ubcf4\uc7a5",
+      exp2_d2: "\ub370\uc774\ud130 \uac70\ubc84\ub10c\uc2a4 \ubaa8\ubc94 \uc0ac\ub840 \uad6c\ud604 \ubc0f \ubd80\uc11c \uac04 \ub370\uc774\ud130 \uac80\uc99d \ud504\ub85c\uc138\uc2a4 \ud45c\uc900\ud654",
+      exp2_d3: "\uc5ec\ub7ec \uc0ac\uc5c5\ubd80 \ub300\uc0c1 \ubd84\uae30\ubcc4 \ub370\uc774\ud130 \ud488\uc9c8 \uac10\uc0ac \uc218\ud589, \ub370\uc774\ud130 \ubb34\uacb0\uc131 \ubb38\uc81c \uc2dd\ubcc4 \ubc0f \ud574\uacb0",
+      exp2_d4: "IT \ubc0f \ube44\uc988\ub2c8\uc2a4 \ud300\uacfc \ud611\uc5c5\ud558\uc5ec ETL \uc6cc\ud06c\ud50c\ub85c\uc6b0 \uad6c\ucd95 \ubc0f \ud06c\ub85c\uc2a4 \uc2dc\uc2a4\ud15c \ub370\uc774\ud130 \ubd88\uc77c\uce58 \ud574\uacb0",
+      exp3_role: "\ud638\ud154 \uc9c1\uc6d0 \u2014 \ub808\uc2a4\ud1a0\ub791 & \ud504\ub860\ud2b8",
+      exp3_d1: "\uac1c\ubcc4 \uace0\uac1d\uc758 \ub2c8\uc988\ub97c \ube60\ub974\uac8c \ud30c\uc545\ud558\uace0 \ucee4\ubba4\ub2c8\ucf00\uc774\uc158 \uc2a4\ud0c0\uc77c\uc744 \ub9de\ucda4\uc73c\ub85c\uc368 \uac15\ub825\ud55c \ub300\uc778 \uad00\uacc4 \ub2a5\ub825 \uac1c\ubc1c \u2014 \uace0\uac1d \uc911\uc2ec \ub370\uc774\ud130 \ubd84\uc11d\uc758 \uae30\ubc18",
+      exp3_d2: "2\ub144\uac04 \ub450 \ubd80\uc11c\uc5d0\uc11c \ud504\ub860\ud2b8 \ub370\uc2a4\ud06c \uc6b4\uc601, \uace0\uac1d \uad00\uacc4 \ubc0f F&B \uc11c\ube44\uc2a4 \uad00\ub9ac",
+      projects_section: "\ud504\ub85c\uc81d\ud2b8",
+      proj1_desc: "\ubca8\uae30\uc5d0 \uae09\uc5ec \uac00\uc774\ub4dc \ud50c\ub7ab\ud3fc \u2014 \ucd5c\uc800\uc784\uae08, \uc9c1\uc5c5\ubcc4 \uae09\uc5ec \ube44\uad50, \uc138\uae08 \uc815\ubcf4, \uc778\ub371\uc2a4 \uc815\ubcf4\ub97c \uc81c\uacf5\ud558\ub294 \ub2e4\uad6d\uc5b4(FR/NL/EN/KO) \uc6f9 \uc560\ud50c\ub9ac\ucf00\uc774\uc158. AI \uae30\ubc18 \uac1c\ubc1c(Vibe Coding)\uacfc Cloudflare\ub85c \uad6c\ucd95.",
+      proj2_desc: "\uae08\uc735 \ube44\uad50 \ud50c\ub7ab\ud3fc \u2014 \ubca8\uae30\uc5d0\uc758 \uc694\uae08, \ub300\ucd9c, \ubcf4\ud5d8, \ubd80\ub3d9\uc0b0, \uae09\uc5ec\ub97c \ube44\uad50\ud558\ub294 \ub2e4\uad6d\uc5b4(FR/NL/EN/KO) \ud234. Vibe Coding \ubc29\ubc95\ub860\uacfc Cloudflare \uc778\ud504\ub77c\ub85c \uc5d4\ub4dc\ud22c\uc5d4\ub4dc \uc124\uacc4 \ubc0f \uac1c\ubc1c.",
+      proj3_name: "\ud300 \uc774\uba54\uc77c \uc790\ub3d9\ud654",
+      proj3_desc: "P&V Group CR \ud300\uc758 \uc774\uba54\uc77c \uc6cc\ud06c\ud50c\ub85c\uc6b0\ub97c Python\uc73c\ub85c \uc790\ub3d9\ud654, \uc218\uc791\uc5c5 \ud504\ub85c\uc138\uc2a4\ub97c \uc790\ub3d9\ud654 \uc2dc\uc2a4\ud15c\uc73c\ub85c \ub300\uccb4\ud558\uc5ec \ud300 \ud6a8\uc728\uc131 \ud5a5\uc0c1 \ubc0f \ud734\uba3c \uc5d0\ub7ec \uac10\uc18c.",
+      education_section: "\ud559\ub825",
+      edu_degree: "\ud68c\uacc4\ud559",
+      edu_school: "EPHEC \u2014 Haute \u00c9cole \u00b7 \ubca8\uae30\uc5d0 \u00b7 2019\ub144 \uc878\uc5c5",
+      edu_detail: "\uc774\uc218 \uacfc\ubaa9: \uc7ac\ubb34\ud68c\uacc4, \uc6d0\uac00\ubd84\uc11d, \uacbd\uc601\ud1b5\uacc4",
+      cert_section: "\uc790\uaca9\uc99d",
+      cert_1: "Salesforce Certified Administrator <span class=\"cert-status\">(\uc900\ube44 \uc911)</span>",
+      cert_2: "Google Data Analytics Professional Certificate <span class=\"cert-status\">(\uc900\ube44 \uc911)</span>",
+      interests_section: "\uad00\uc2ec \ubd84\uc57c",
+      int_1: "AI / \uba38\uc2e0\ub7ec\ub2dd",
+      int_2: "\uc624\ud508 \uc18c\uc2a4",
+      int_3: "\ub2e4\ubb38\ud654 \ucee4\ubba4\ub2c8\ucf00\uc774\uc158",
+      int_4: "\uc5b8\uc5b4 \ud559\uc2b5",
+      int_5: "\uc5ec\ud589"
+    }
+  };
+
+  /* Certifications use innerHTML because of <span> tags */
+  var certKeys = ["cert_1", "cert_2"];
+
+  var currentLang = "en";
+
+  /**
+   * Switch all translatable elements to the selected language
+   * @param {string} lang - Language code: "en" | "fr" | "nl" | "ko"
+   */
+  function switchLang(lang) {
+    currentLang = lang;
+    var dict = translations[lang];
+    if (!dict) return;
+
+    /* Update all data-i18n elements */
+    var elements = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < elements.length; i++) {
+      var key = elements[i].getAttribute("data-i18n");
+      if (dict[key] !== undefined) {
+        /* Use innerHTML for cert items (they contain <span> tags) */
+        if (certKeys.indexOf(key) !== -1) {
+          elements[i].innerHTML = dict[key];
+        } else {
+          elements[i].textContent = dict[key];
+        }
+      }
+    }
+
+    /* Update active button */
+    var buttons = document.querySelectorAll(".lang-btn");
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].classList.remove("active");
+    }
+    var langIndex = { en: 0, fr: 1, nl: 2, ko: 3 };
+    var idx = langIndex[lang];
+    if (idx !== undefined && buttons[idx]) {
+      buttons[idx].classList.add("active");
+    }
+
+    /* Update html lang attribute */
+    document.documentElement.lang = lang;
+  }
+
+  /* Initialize: ensure English is set as default on load */
+  document.addEventListener("DOMContentLoaded", function() {
+    switchLang("en");
+  });
+
+</script>
+</body>
+</html>
